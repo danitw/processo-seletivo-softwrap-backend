@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 });*/
 
 $router->get('/', 'PeopleController@index');
+$router->get('/show/{id}', 'PeopleController@show');
 $router->post('/create', 'PeopleController@create');
 $router->put('/edit/{id}', 'PeopleController@edit');
 $router->delete('/delete/{id}', 'PeopleController@delete');

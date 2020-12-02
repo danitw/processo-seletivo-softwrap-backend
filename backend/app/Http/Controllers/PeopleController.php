@@ -10,7 +10,11 @@ class PeopleController extends Controller {
   public function index() {
     return People::all();
   }
-  
+
+  public function show($id) {
+    return $people = People::where('id', $id)->get();
+  }
+
   public function create(Request $request) {
     $people = new People;
     $content = $request->all();
@@ -43,6 +47,8 @@ class PeopleController extends Controller {
   }
   
   public function delete($id) {
+    $people = People::find($id);
 
+    $people->delete();
   }
 }
