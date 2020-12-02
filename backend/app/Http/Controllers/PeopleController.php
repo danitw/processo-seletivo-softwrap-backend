@@ -22,11 +22,24 @@ class PeopleController extends Controller {
     $people->city  = $content['city'];
     $people->state = $content['state'];
 
-    $people->save();
+    return $people->save();
+
+    //return response()->json(['sucess' => true]);
   }
 
   public function edit($id, Request $request) {
+    $content = $request->all();
 
+    $people = People::find($id);
+
+    $people->name  = $content['name'];
+    $people->age   = $content['age'];
+    $people->civil_state = $content['civil_state'];
+    $people->CPF   = $content['CPF'];
+    $people->city  = $content['city'];
+    $people->state = $content['state'];
+
+    $people->save();
   }
   
   public function delete($id) {
