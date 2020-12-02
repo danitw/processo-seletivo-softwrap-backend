@@ -39,7 +39,7 @@ class PeopleController extends Controller {
     $people->city  = $content['city'];
     $people->state = $content['state'];
 
-    $people->save();
+    return $people->save();
   }
   
   public function delete($id) {
