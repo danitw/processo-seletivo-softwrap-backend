@@ -8,6 +8,10 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: OPTIONS, POST");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Max-Age: 86400");
 /*
 |--------------------------------------------------------------------------
 | Create The Application
