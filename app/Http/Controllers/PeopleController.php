@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+// use Illuminate\Support\Facades\Log;
 use App\Models\People;
 
 class PeopleController extends Controller {
@@ -18,7 +18,9 @@ class PeopleController extends Controller {
   public function create(Request $request) {
     $people = new People;
     $content = $request->all();
-
+    // dd($content);
+    // var_dump($content);
+    // Log::debug('An informational message.');
     $people->name  = $content['name'];
     $people->age   = $content['age'];
     $people->civil_state = $content['civil_state'];
